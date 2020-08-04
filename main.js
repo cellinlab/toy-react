@@ -1,9 +1,18 @@
 import {ToyReact} from './ToyReact'
 
+class MyComponent {
+  render() {
+    return <div>cool</div>
+  }
+  setAttribute(name, value) {
+    this[name] = value;
+  }
+  mountTo(parent) {
+    let vdom = this.render();
+    vdom.mountTo(parent);
+  }
+}
 
-let a = <div id="iad" name="a">
-  <span>Hello</span>
-  <span>World</span>
-  <span>!</span>
-</div>
-document.body.appendChild(a)
+let a = <MyComponent id="iad" name="a"></MyComponent>
+
+ToyReact.render(a, document.body);
