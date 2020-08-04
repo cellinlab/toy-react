@@ -1,3 +1,1 @@
-import ToyReact from './ToyReact'
-
-let a = <MyCmponent name="a" />
+let a = <MyComponent name="a" />
